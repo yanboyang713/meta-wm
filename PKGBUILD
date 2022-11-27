@@ -1,6 +1,6 @@
 # Maintainer: Boyang Yan <yanboyang713@gmail.com>
 pkgname=meta-wm
-_pkgname=chadwm
+_pkgname=meta-wm-download
 #_output_dir=~/.config/chadwm
 pkgver=0.1
 pkgrel=1
@@ -30,7 +30,8 @@ build() {
 
 
     mkdir -p "${pkgdir}/opt/${pkgname}"
-	#cp -rf * "${pkgdir}/opt/${pkgname}"
+	cp -rf ./scripts "${pkgdir}/opt/${pkgname}"
+	cp ./.Xresources "${pkgdir}/opt/${pkgname}"
 
 	make
     #if [ -d "~/.config/" ]
@@ -50,6 +51,6 @@ package() {
 	#cd "$_output_dir/chadwm"
 	cd "$_pkgname"
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
-	install -Dm644 ../LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-	install -Dm644 ../README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+	install -Dm644 ./LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm644 ./README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
 }
