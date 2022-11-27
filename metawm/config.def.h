@@ -147,7 +147,7 @@ static Key keys[] = {
         SHCMD("maim | xclip -selection clipboard -t image/png")},
     {MODKEY,                            XK_u,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
-    { ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD("screenshot") },
+    { ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD("meta-screenshot") },
 
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
 
