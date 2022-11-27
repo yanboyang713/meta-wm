@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=chadwm
+Name=meta-wm
 Comment=Meta WM for Meta Scientific Linux
-Exec= /home/yanboyang713/.config/chadwm/scripts/./run.sh
+Exec= /opt/meta-wm/scripts/./run.sh
 Type=Application

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-xrdb merge ~/.Xresources 
+xrdb -merge /opt/meta-wm/.Xresources
 xbacklight -set 10 &
-feh --bg-fill ~/Pictures/wallpapers/chad.png &
+feh --bg-fill /opt/meta-wm/scripts/wallpaper.png &
 xset r rate 200 50 &
 picom &
 
-~/.config/chadwm/scripts/bar.sh &
+/opt/meta-wm/scripts/bar.sh &
 while type dwm >/dev/null; do dwm && continue || break; done

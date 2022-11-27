@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/usr/bin/zsh
 
 # ^c$var^ = fg color
 # ^b$var^ = bg color
@@ -6,7 +6,7 @@
 interval=0
 
 # load colors
-. ~/.config/chadwm/scripts/bar_themes/onedark
+. /opt/meta-wm/scripts/bar_themes/onedark
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
