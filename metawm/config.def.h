@@ -131,13 +131,22 @@ static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
 static const char *zoterocmd[] = { "zotero", NULL };
 static const char *googleChromecmd[] = { "google-chrome-stable", NULL };
 
+/* If you use amixer, use this instead. Thanks go to DaniOrt3ga. */
+static const char *upvol[] = { "/usr/bin/amixer", "set", "Master", "5%+", NULL };
+static const char *downvol[] = { "/usr/bin/amixer", "set", "Master", "5%-", NULL };
+static const char *mutevol[] = { "/usr/bin/amixer", "set", "Master", "toggle", NULL };
+
 static Key keys[] = {
     /* modifier                         key         function        argument */
 
-    // brightness and audio 
-    {0,                     XF86XK_AudioMute,       spawn,          SHCMD("pamixer -t")},
-    {0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("pamixer -i 5")},
-    {0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("pamixer -d 5")},
+    // audio required install alsa-utils
+    //{0,                     XF86XK_AudioMute,       spawn,          SHCMD("pamixer -t")},
+    //{0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("pamixer -i 5")},
+    //{0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("pamixer -d 5")},
+    {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{0, XF86XK_AudioMute, spawn, {.v = mutevol } },
+	{0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+    //brightness
     {0,              XF86XK_MonBrightnessDown,      spawn,          SHCMD("xbacklight -dec 5")},
     {0,              XF86XK_MonBrightnessUp,        spawn,          SHCMD("xbacklight -inc 5")},
 
