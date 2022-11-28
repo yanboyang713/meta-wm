@@ -31,9 +31,8 @@ static const int colorfultag        = 1;        /* 0 means use SchemeSel for sel
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
 
-static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11",
-                                        "Material Design Icons Desktop:size=11" };
-
+//static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11", "Material Design Icons Desktop:size=11" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:medium:size=10", "Material Design Icons-Regular:size=10" };
 // theme
 #include "themes/onedark.h"
 
@@ -143,10 +142,10 @@ static Key keys[] = {
     {0,              XF86XK_MonBrightnessUp,        spawn,          SHCMD("xbacklight -inc 5")},
 
     // screenshot fullscreen and cropped
-    {MODKEY|ControlMask,                XK_u,       spawn,
-        SHCMD("maim | xclip -selection clipboard -t image/png")},
-    {MODKEY,                            XK_u,       spawn,
-        SHCMD("maim --select | xclip -selection clipboard -t image/png")},
+    //{MODKEY|ControlMask,                XK_u,       spawn,
+        //SHCMD("maim | xclip -selection clipboard -t image/png")},
+    //{MODKEY,                            XK_u,       spawn,
+        //SHCMD("maim --select | xclip -selection clipboard -t image/png")},
     { ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD("meta-screenshot") },
 
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
