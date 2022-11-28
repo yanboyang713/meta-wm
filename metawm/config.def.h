@@ -140,29 +140,17 @@ static Key keys[] = {
     /* modifier                         key         function        argument */
 
     // audio required install alsa-utils
-    //{0,                     XF86XK_AudioMute,       spawn,          SHCMD("pamixer -t")},
-    //{0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("pamixer -i 5")},
-    //{0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("pamixer -d 5")},
     {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{0, XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
     //brightness
-    {0,              XF86XK_MonBrightnessDown,      spawn,          SHCMD("xbacklight -dec 5")},
-    {0,              XF86XK_MonBrightnessUp,        spawn,          SHCMD("xbacklight -inc 5")},
+    {0, XF86XK_MonBrightnessDown, spawn, SHCMD("xbacklight -dec 5")},
+    {0, XF86XK_MonBrightnessUp, spawn, SHCMD("xbacklight -inc 5")},
 
     // screenshot fullscreen and cropped
-    //{MODKEY|ControlMask,                XK_u,       spawn,
-        //SHCMD("maim | xclip -selection clipboard -t image/png")},
-    //{MODKEY,                            XK_u,       spawn,
-        //SHCMD("maim --select | xclip -selection clipboard -t image/png")},
     { ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD("meta-screenshot") },
-
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
-
     { MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
-    //{ MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
-    // { MODKEY,                           XK_Return, spawn,            SHCMD("st_pad && st")},
-    
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
