@@ -36,6 +36,3 @@ LDFLAGS  = ${LIBS}
 
 # compiler and linker
 CC = cc
-
-# -march, target cpu type
-MARCH = -march=x86-64
