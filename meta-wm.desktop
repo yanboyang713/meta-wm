@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=meta-wm
+Name=Meta-WM
 Comment=Meta WM for Meta Scientific Linux
 Exec= /opt/meta-wm/scripts/./run.sh
 Type=Application

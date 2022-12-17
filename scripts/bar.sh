@@ -28,13 +28,19 @@ pkg_updates() {
 }
 
 battery() {
-  get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
-  printf "^c$blue^   $get_capacity"
+	FILE=/sys/class/power_supply/BAT1/capacity
+	if test -f "$FILE"; then
+		get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
+		printf "^c$blue^   $get_capacity"
+	fi
 }
 
 brightness() {
-  printf "^c$red^   "
-  printf "^c$red^%.0f\n" $(cat /sys/class/backlight/*/brightness)
+	FILE=/sys/class/backlight/*/brightness
+	if test -f "$FILE"; then
+		printf "^c$red^   "
+		printf "^c$red^%.0f\n" $(cat /sys/class/backlight/*/brightness)
+	fi
 }
 
 mem() {
